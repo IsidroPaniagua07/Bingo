@@ -1,4 +1,4 @@
-Bingo Web Application
+Bingo Web Application v1.1
 
 Small Bingo application developed for promotional events.
 
