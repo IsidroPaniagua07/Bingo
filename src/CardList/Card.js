@@ -14,7 +14,7 @@ const Card = ({ character }) => {
 
   return (
     <div id={character} style={{background:bgStyle}} className="flex justify-center items-center text-5xl rounded-md 
-    text-white border border-gray-300 transition-all delay-750 h-full min-w-[52px] w-full font-mono font-bold">{character}</div>
+    text-white box-border border-2 border-black transition-all delay-750 h-full min-w-[52px] w-full font-mono font-bold">{character}</div>
   )
 }
 

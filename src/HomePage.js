@@ -95,11 +95,11 @@ const HomePage = () => {
 
   return (
   <>
-    <div id="fadingDiv" className="absolute table opacity-0 w-full h-full bg-jcaqua text-white ">
+    <div id="fadingDiv" className="absolute table opacity-0 w-full h-full bg-jcaqua text-white">
       <div id="fadingDivChild" className="table-cell text-[40vh] align-middle text-center"></div>
     </div>
-    <div className="flex h-full w-full justify-center items-center ">
-      <div className="flex flex-col h-full w-full items-center justify-center bg-gray-300">
+    <div className="flex h-full w-full justify-center items-center p-[2px]">
+      <div className="flex flex-col h-full w-full items-center justify-center bg-black">
         <CardList />
       </div>
     </div>
