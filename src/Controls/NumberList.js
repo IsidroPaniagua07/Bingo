@@ -10,8 +10,8 @@ const NumberList = ({ calledNumbers, handleUndoButton }) => {
             <div className='flex items-center w-1/2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center justify-center'>
                 {number}
             </div>
-            <button onClick={()=> handleUndoButton(number, index)} className='flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl items-center text-white
-             bg-[rgb(255,0,0)] border-2 border-black border-t-0 w-1/2 lg:1/3 h-full '>
+            <button onClick={()=> handleUndoButton(number, index)} className={`flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl items-center text-white
+             bg-[rgb(255,0,0)] border-black w-1/2 lg:1/3 h-full ${index>length-10?'border-2 border-t-0':'border-2'}`}>
                 Undo
             </button>
         </div>
