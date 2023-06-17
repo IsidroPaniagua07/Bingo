@@ -1,16 +1,17 @@
 const NumberList = ({ calledNumbers, handleUndoButton }) => {
-    const alternatingColors = ['#d5d5d5', '#a9a9a9'];
+    const alternatingColors = ['#007079', '#ffffff'];
   return (
 <>
-    <div className='flex justify-start items-center bg-gray-100 overflow-auto outline-black outline outline-1 rounded-3xl w-2/3 h-[94%] flex-col'>
+    <div className='flex justify-start items-center bg-gray-300 overflow-auto outline-black w-full h-full flex-col'>
         {calledNumbers &&  calledNumbers.map((number, index, {length}) => {
             if (index <= length - 11) return null
             return (
-        <div key={index} style={{backgroundColor:alternatingColors[index % 2]}} className='flex flex-row w-full h-[10%] pl-1 justify-between items-center'>
-            <div className='flex items-center w-auto text-3xl ml-4 font-bold'>
+        <div key={index} style={{backgroundColor:alternatingColors[index % 2]}} className='flex flex-row w-full h-[10%] md:pl-4 justify-between items-center'>
+            <div className='flex items-center w-1/2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center justify-center'>
                 {number}
             </div>
-            <button onClick={()=> handleUndoButton(number, index)} className='flex justify-center items-center mr-4 bg-white border border-black w-1/4 h-1/2'>
+            <button onClick={()=> handleUndoButton(number, index)} className='flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl items-center text-white
+             bg-[rgb(255,0,0)] border-2 border-black border-t-0 w-1/2 lg:1/3 h-full '>
                 Undo
             </button>
         </div>
