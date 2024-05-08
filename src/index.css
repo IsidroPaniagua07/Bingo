@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-html, body, #root {
+html, #root {
   height: 100%;
   width: 100%;
 }

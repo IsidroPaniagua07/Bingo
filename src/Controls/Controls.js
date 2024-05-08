@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import NumberList from "./NumberList";
+import './Controls.css'
 
 const Controls = () => {
   const inputRef = useRef(null);
@@ -13,11 +14,8 @@ const Controls = () => {
     // Home
     // setSocket(io('192.168.0.102:8080/'))
     // Work PC
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-      setSocket(io(process.env.REACT_APP_DEVELOPMENT_SERVER_IP));
-    } else {
-      setSocket(io(process.env.REACT_APP_PRODUCTION_SERVER_IP));
-    }
+
+    setSocket(io(process.env.REACT_APP_PRODUCTION_SERVER_IP));
   }, []);
 
   // Submitting a number form handler

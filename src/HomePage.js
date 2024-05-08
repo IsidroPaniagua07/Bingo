@@ -4,12 +4,9 @@ import CardList from "./CardList/CardList";
 const HomePage = () => {
   let numberList = [];
   let socket = "";
+  socket = io(process.env.REACT_APP_PRODUCTION_SERVER_IP);
 
-  if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-    socket = io(process.env.REACT_APP_DEVELOPMENT_SERVER_IP);
-  } else {
-    socket = io(process.env.REACT_APP_PRODUCTION_SERVER_IP);
-  }
+
 
   socket.on("connect", () => {
     console.log(`You connected with id: ${socket.id}`);
@@ -102,20 +99,23 @@ const HomePage = () => {
 
   return (
     <>
+    <div className="h-full w-full overflow-hidden">
+
       <div
         id="fadingDiv"
-        className="absolute table opacity-0 w-full h-full bg-jcaqua text-white"
-      >
+        className="absolute table opacity-0 w-full h-full bg-jcaqua text-white over"
+        >
         <div
           id="fadingDivChild"
           className="table-cell text-[40vh] align-middle text-center"
-        ></div>
+          ></div>
       </div>
-      <div className="flex h-full w-full justify-center items-center p-[2px]">
-        <div className="flex flex-col h-full w-full items-center justify-center bg-black">
+      <div className="flex h-full w-full justify-center  items-center p-[2px]">
+        <div className="flex flex-col items-center justify-center h-full bg-black w-[93%]">
           <CardList />
         </div>
       </div>
+          </div>
     </>
   );
 };
