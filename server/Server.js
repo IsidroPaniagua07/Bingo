@@ -1,11 +1,11 @@
 require("dotenv/config");
 
-const io = require("socket.io")(process.env.PORT, {
+const io = require("socket.io")(8282, {
   cors: {
     origin: "*",
   },
 });
-console.log("Listening on port: " + process.env.PORT);
+console.log("Listening on port: 8282");
 let calledNumbers = [];
 
 // Initializes Socket IO

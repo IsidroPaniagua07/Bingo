@@ -15,7 +15,7 @@ const Controls = () => {
     // setSocket(io('192.168.0.102:8080/'))
     // Work PC
 
-    setSocket(io(process.env.REACT_APP_PRODUCTION_SERVER_IP));
+    setSocket(io(process.env.REACT_APP_PRODUCTION_SERVER_IP || "http://localhost:8282"));
   }, []);
 
   // Submitting a number form handler

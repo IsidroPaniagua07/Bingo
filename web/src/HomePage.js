@@ -4,7 +4,10 @@ import CardList from "./CardList/CardList";
 const HomePage = () => {
   let numberList = [];
   let socket = "";
-  socket = io(process.env.REACT_APP_PRODUCTION_SERVER_IP);
+  // Make sure to create a .env file in the web directory with:
+  // REACT_APP_PRODUCTION_SERVER_IP=http://localhost:8282
+  // or your actual server IP/port
+  socket = io(process.env.REACT_APP_PRODUCTION_SERVER_IP || "http://localhost:8282");
 
 
 
