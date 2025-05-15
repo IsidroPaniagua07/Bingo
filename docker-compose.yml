@@ -14,6 +14,13 @@ services:
       - /app/node_modules
     networks:
       - bingo-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8282"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
   web:
     build:
@@ -27,9 +34,17 @@ services:
       - ./web:/app
       - /app/node_modules
     depends_on:
-      - server
+      server:
+        condition: service_healthy
     networks:
       - bingo-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
 networks:
   bingo-network:
